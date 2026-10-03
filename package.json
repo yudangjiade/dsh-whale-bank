@@ -2,6 +2,15 @@
   "name": "dsh-whale-bank",
   "version": "0.1.0",
   "description": "鲸元银行 — Token Bank 独立插件：把 DeepSeek 官方通道的 token 台账铸成一张可保存 / 分享的鲸元券",
+  "author": "yudangjiade",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yudangjiade/dsh-whale-bank.git"
+  },
+  "homepage": "https://github.com/yudangjiade/dsh-whale-bank#readme",
+  "bugs": {
+    "url": "https://github.com/yudangjiade/dsh-whale-bank/issues"
+  },
   "type": "module",
   "main": "lib/index.js",
   "exports": {

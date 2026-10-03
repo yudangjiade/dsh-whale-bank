@@ -1,5 +1,8 @@
 # dsh-whale-bank · 鲸元银行
 
+> 仓库：<https://github.com/yudangjiade/dsh-whale-bank> · 维护者：[@yudangjiade](https://github.com/yudangjiade)
+> 票面素材与版面设计来自上游 dsh-web（Apache-2.0，署名见 [NOTICE](NOTICE)）
+
 把 [dsh-web 全家桶](https://github.com/zhu1090093659/dsh-web) 里「使用统计 → Token 银行」的那个**鲸元券**剥离出来的独立 DSH 插件：不需要装整套 dsh-web，也不用装它的用量统计面板，单独一个包就能把 DeepSeek 官方通道的 token 台账铸成一张可保存 / 分享的票券。
 
 ![鲸元券票面（示例面额，由 scripts/preview.mjs 按客户端同一套版面比例合成）](docs/voucher-preview.png)
@@ -39,7 +42,8 @@
 
 ```bash
 dsh plugin --profile web add <本包 tgz 的绝对路径>
-# 或从仓库装：dsh plugin --profile web add github:<你的用户名>/dsh-whale-bank
+# 或从 GitHub 直接装（推荐，DSH 会自己拉取并解析依赖）
+dsh plugin --profile web add github:yudangjiade/dsh-whale-bank
 ```
 装完重启 `dsh web`。插件行 id 是 `whale-bank`（见 `cordis.patch.yml`）。
 
