@@ -1,0 +1,39 @@
+dsh-whale-bank
+Copyright 2026 dsh-whale-bank contributors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It is a standalone extraction of the "Token Bank / 鲸元券" feature and is
+derived from the following upstream work:
+
+  dsh-web — DeepSeek Harness (DSH) Web GUI 插件与主题全家桶
+  https://github.com/zhu1090093659/dsh-web
+  Copyright the dsh-web contributors
+  Licensed under the Apache License, Version 2.0
+
+  Specifically the package `@linxin666/dsh-usage` (packages/dsh-usage), from
+  which this project reuses:
+
+  - assets/jingyuan-note.jpg — the whale-yuan note artwork
+    (upstream source: packages/dsh-usage/assets/jingyuan-note.jpg, 1400x714).
+    The file is redistributed unchanged.
+  - the note layout stamped onto the artwork (denomination block, "whale yuan"
+    caption, seal-red serial line) and its geometry ratios, as implemented in
+    packages/dsh-usage/src/client/voucher.ts
+  - the DeepSeek peak/off-peak price book and the Beijing peak-window clock
+    (packages/dsh-usage/src/core/pricing.ts)
+  - the per-day / per-provider / per-model ledger fold document shape and its
+    defensive deserialization (packages/dsh-usage/src/core/ledger.ts)
+  - the loopback trust fence semantics (socket address + Host header + browser
+    same-origin markers) from dsh-web's shared host sources
+  - the browser module-loader bundle convention
+    (`window.__ModuleLoader__.load({ id, factory })`) from dsh-web's built
+    client bundle
+
+Nothing from upstream is bundled beyond the artwork asset listed above; the
+host and client halves in this package are an independent, smaller
+implementation written for a standalone install (no dsh-web-settings family
+bridge, no provider balance probes, no plan quotas, no sidebar foot card).
+
+DeepSeek, DeepSeek Harness and the whale-girl character are properties of their
+respective owners; this is an unofficial community plugin.

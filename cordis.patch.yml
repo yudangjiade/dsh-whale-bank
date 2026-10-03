@@ -1,0 +1,10 @@
+﻿# Mount the whale-bank host plugin when this package is registered as a
+# DeepSeek Harness profile bundle.
+#
+# config.tokensPerYuan 给出本安装的默认汇率（1000 tokens = 1 鲸元，与早期社区
+# 截图里的面额一致）；省略则用 schema 默认值 1,000,000。该值之后可在插件设置页里改。
+- insert:
+    - id: whale-bank
+      name: dsh-whale-bank
+      config:
+        tokensPerYuan: 1000

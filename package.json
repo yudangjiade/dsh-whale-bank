@@ -1,0 +1,48 @@
+{
+  "name": "dsh-whale-bank",
+  "version": "0.1.0",
+  "description": "鲸元银行 — Token Bank 独立插件：把 DeepSeek 官方通道的 token 台账铸成一张可保存 / 分享的鲸元券",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "assets/jingyuan-note.jpg",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "engines": {
+      "dsh": ">=0.1.7-rc.1"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "token",
+    "usage",
+    "whale-yuan"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node test/smoke.mjs"
+  },
+  "license": "Apache-2.0"
+}

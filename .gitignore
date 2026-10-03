@@ -1,0 +1,15 @@
+﻿# 依赖目录：里面那个 @deepseek-ai/schemastery 只是跑测试的桩，不进仓库
+node_modules/
+
+# 本地打包产物：tgz 挂到 GitHub Release 供离线下载，不占仓库
+dist/
+
+# 贴图素材：仓库里只保留随插件分发的这一张
+assets/jingyuan-note.png
+assets/*副本*
+assets/_material/
+
+# 系统垃圾
+Thumbs.db
+.DS_Store
+*.log
