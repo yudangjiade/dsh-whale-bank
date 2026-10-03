@@ -23,8 +23,7 @@
 
 包本身零依赖（只用 Node 内置模块 + 宿主提供的 `@deepseek-ai/schemastery`），所以手动装最省事：
 
-1. 从本包 tgz 解压到 profile 的 `node_modules`（**别直接拷源码目录**：源码里的
-   `node_modules/@deepseek-ai/schemastery` 只是跑测试用的桩，会遮住宿主提供的真包）：
+1. 从本包 tgz 解压到 profile 的 `node_modules`（**别把 `node_modules` 一起拷进去** —— 仓库不含依赖副本正是为了不遮住宿主提供的真包）：
    ```bash
    mkdir -p "<DSH_HOME>/profiles/web/node_modules/dsh-whale-bank"
    tar -xzf dsh-whale-bank-0.1.0.tgz -C "<DSH_HOME>/profiles/web/node_modules/dsh-whale-bank" --strip-components=1
@@ -123,7 +122,8 @@ npm test        # 10 个冒烟用例：折叠 / 口径 / 汇率 / 落盘 / 导�
 ```
 
 `test/smoke.mjs` 不需要运行中的 DSH：Host 半用假 ctx 驱动，客户端半用假 `__ModuleLoader__` + 假 `react` 评估。
-`node_modules/@deepseek-ai/schemastery/` 是**仅测试用的桩**（真包由宿主在运行时提供），不会随 `npm pack` 分发。
+测试需要能解析 `@deepseek-ai/schemastery`（`volatile()` 由它提供）：仓库**故意不含**该依赖的本地副本 ——
+自带副本会遮住宿主提供的真包，插件会加载失败。请在 DSH profile 目录里跑测试，或先 `npm i @deepseek-ai/schemastery@3.18.4`。
 
 ## 许可
 
